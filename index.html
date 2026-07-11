@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 日本關西近郊美學與器物採集之旅</title>
+    <style>
+        :root {
+            --bg-color: #F4F3EF;       /* 溫潤米白 */
+            --primary-color: #8A9A86;  /* 莫蘭迪鼠尾草綠 */
+            --text-dark: #3D3D3D;      /* 深炭灰 */
+            --text-light: #7A7A7A;     /* 淺灰 */
+            --accent-color: #C8B195;   /* 窯燒磚與大地陶土色 */
+            --card-bg: #FFFFFF;
+            --border-color: #E2E0D9;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding: 15px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px 10px;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 25px;
+        }
+
+        header h1 {
+            font-size: 1.4rem;
+            color: var(--text-dark);
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        header p {
+            font-size: 0.88rem;
+            color: var(--text-light);
+        }
+
+        .section-title {
+            font-size: 1.15rem;
+            color: var(--text-dark);
+            border-left: 4px solid var(--primary-color);
+            padding-left: 10px;
+            margin: 25px 0 15px 0;
+            font-weight: bold;
+        }
+
+        .day-card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.01);
+            border: 1px solid var(--border-color);
+        }
+
+        .day-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        .day-number {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .day-date {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 20px;
+            border-left: 1px solid var(--border-color);
+            padding-bottom: 20px;
+        }
+
+        .timeline-item:last-child {
+            border-left: 1px solid transparent;
+            padding-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -5px;
+            top: 6px;
+            width: 9px;
+            height: 9px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+        }
+
+        .time {
+            font-weight: bold;
+            font-size: 0.85rem;
+            color: var(--accent-color);
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .event-title {
+            font-size: 0.98rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 4px;
+        }
+
+        .event-desc {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 8px;
+        }
+
+        .transport-tag {
+            display: inline-block;
+            background-color: #F0F2EE;
+            color: #5A6B54;
+            font-size: 0.75rem;
+            padding: 3px 8px;
+            border-radius: 4px;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .map-btn {
+            display: inline-flex;
+            align-items: center;
+            background-color: #FFFFFF;
+            color: #556B2F;
+            text-decoration: none;
+            font-size: 0.75rem;
+            padding: 5px 12px;
+            border-radius: 4px;
+            border: 1px solid #8A9A86;
+            font-weight: 500;
+            margin-top: 2px;
+            margin-right: 5px;
+            transition: all 0.2s;
+        }
+
+        .map-btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+            background: white;
+            border-radius: 6px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            margin-bottom: 20px;
+        }
+
+        .info-table th {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: left;
+            padding: 10px;
+        }
+
+        .info-table td {
+            padding: 10px;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-dark);
+        }
+
+        ul.bullets {
+            padding-left: 15px;
+            font-size: 0.85rem;
+            color: var(--text-dark);
+        }
+
+        ul.bullets li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>2026 日本關西近郊美學之旅</h1>
+        <p>10/3 — 10/10 • 工業紅磚、清水模、器物與古民家採集</p>
+    </header>
+
+    <!-- 快速預約清單 -->
+    <div class="section-title">📝 關鍵預約清單</div>
+    <table class="info-table">
+        <thead>
+            <tr>
+                <th>項目 / 班次</th>
+                <th>開放預約日期</th>
+                <th>預約管道與備註</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><b>Sunrise 寢台特急臥鋪</b></td>
+                <td>9/4 10:00 (日本時間)</td>
+                <td>JR西日本 e5489 系統（搶10/4橫濱→姬路段）</td>
+            </tr>
+            <tr>
+                <td><b>特急濱風 3 號 指定席</b><br><small>10/5 13:25 姬路 → 城崎溫泉</small></td>
+                <td>9/5 10:00 (日本時間)</td>
+                <td>JR西日本官網或抵達日本後於綠色窗口/自動售票機預先劃位</td>
+            </tr>
+            <tr>
+                <td><b>和久傳之森「桑」餐廳</b></td>
+                <td>8/1 開放後即刻預約</td>
+                <td>官方網站線上預約，森林精緻和食席次有限</td>
+            </tr>
+            <tr>
+                <td><b>特急東方白鸛 14 號 指定席</b><br><small>10/7 15:00 豐岡 → 篠山口</small></td>
+                <td>9/7 10:00 (日本時間)</td>
+                <td>JR西日本官網（こうのとり），大行李移動強烈建議劃指定席</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- 每日行程 -->
+    <div class="section-title">🗓️ 最終優化行程與精準地圖</div>
+
+    <!-- Day 1 -->
+    <div class="day-card">
+        <div class="day-header">
+            <span class="day-number">Day 1</span>
+            <span class="day-date">10/3 (六) 台北松山 ➔ 橫濱</span>
+        </div>
+        <div class="timeline-item">
+            <span class="time">16:20</span>
+            <div class="event-title">台北松山 (TSA) 啟程</div>
+            <div class="event-desc">搭乘長榮航空前往東京羽田 (HND)，預計 20:20 降落。</div>
+        </div>
+        <div class="timeline-item">
+            <span class="time">21:10</span>
+            <div class="event-title">羽田機場 ➔ 橫濱站</div>
+            <div class="transport-tag">🚃 京急電鐵 (¥400 / 車程約 30 分鐘)</div>
+            <div class="event-desc">搭乘京急空港線急行直達橫濱站。抵達後可於站內採買明日早茶或宵夜。</div>
+            <a href="https://www.google.com/maps?q=%E6%A9%AB%E6%BF%B1%E7%AB%99" target="_blank" class="map-btn">📍 橫濱站位置</a>
+        </div>
+        <div class="timeline-item">
+            <span class="time">22:15</span>
+            <div class="event-title">入住：相鐵飯店喜譜樂吉橫濱</div>
+            <div class="event-desc">鄰近東口出口，利於深夜辦理入住與翌日大行李寄存。</div>
+            <a href="https://www.google.com/maps?q=%E7%9B%B8%E9%90%B5%E9%A3%AF%E5%BA%97%E5%96%9C%E6%99%AE%E6%A8%82%E5%90%89%E6%A9%AB%E6%BF%B1" target="_blank" class="map-btn">📍 飯店位置</a>
+        </div>
+    </div>
+
+    <!-- Day 2 -->
+    <div class="day-card">
+        <div class="day-header">
+            <span class="day-number">Day 2</span>
+            <span class="day-date">10/4 (日) 橫濱港灣結構美學 ➔ 寢台列車</span>
+        </div>
+        <div class="timeline-item">
+            <span class="time">10:00</span>
+            <div class="event-title">MARINE & WALK YOKOHAMA</div>
+            <div class="transport-tag">🚇 橫濱站搭乘港未來線至馬車道站</div>
+            <div class="event-desc">實地考察美式工業紅磚與粗獷外露金屬結構的當代商場景觀。</div>
+            <a href="https://www.google.com/maps?q=MARINE%20%26%20WALK%20YOKOHAMA" target="_blank" class="map-btn">📍 景點位置</a>
+        </div>
+        <div class="timeline-item">
+            <span class="time">12:30</span>
+            <div class="event-title">午餐：The Wharf House (山下公園)</div>
+            <div class="transport-tag">🚶 沿海濱長廊散步約 15 分鐘</div>
+            <div class="event-desc">面朝橫濱港灣、大棧橋與冰川丸的開闊美景景觀餐廳 (預算約 ¥3,000)。</div>
+            <a href="https://www.google.com/maps?q=The%20Wharf%20House%20%E5%B1%B1%E4%B8%8B%E5%85%AC%E5%9C%92" target="_blank" class="map-btn">📍 餐廳位置</a>
+        </div>
+        <div class="timeline-item">
+            <span class="time">14:30</span>
+            <div class="event-title">BankART KAIKO</div>
+            <div class="event-desc">舊帝國蠶絲倉庫歷史建物改建的藝文採集空間，觀察新舊結構的撞擊。</div>
+            <a href="https://www.google.com/maps?q=BankART%20KAIKO" target="_blank" class="map-btn">📍 空間位置</a>
+        </div>
+        <div class="timeline-item">
+            <span class="time">21:52</span>
+            <div class="event-title">Sunrise 瀨戶/出雲號 (橫濱站發車)</div>
+            <div class="transport-tag">🚂 寢台特急臥鋪 (單獨購票，務必提早於 e5489 搶票)</div>
+            <div class="event-desc">提領行李前往月台。請注意 21:52 準時發車。夜宿寢台列車，睡往播磨姬路。</div>
+            <a href="https://www.google.com/maps?q=%E6%A9%AB%E6%BF%B1%E7%AB%99" target="_blank" class="map-btn">📍 橫濱站乘車點</a>
+        </div>
+    </div>
+
+    <!-- Day 3 -->
+    <div class="day-card">
+        <div class="day-header">
+            <span class="day-number">Day 3</span>
+            <span class="day-date">10/5 (一) 姬路白鷺城 ➔ 千年圓教寺 ➔ 城崎溫泉</span>
+        </div>
+        <div class="timeline-item">
+            <span class="time">05:25</span>
+            <div class="event-title">抵達姬路站 ＆ 大行李寄存</div>
+            <div class="event-desc">抵達後於中央改札口旁置物櫃寄存隨身箱（請備妥硬幣）。清晨漫步大手前通。</div>
+            <a href="https://www.google.com/maps?q=%E5%A7%AC%E8%B7%AF%E7%AB%99" target="_blank" class="map-btn">📍 姬路站位置</a>
+            <a href="https://visit-himeji.com/zh-hant/travel-info/himeji-station-coin-lockers" target="_blank" class="map-btn" style="color: #A52A2A; border-color: #A52A2A;">🗺️ 姬路站置物櫃地圖指南</a>
+        </div>
+        <div class="timeline-item">
+            <span class="time">07:00</span>
+            <div class="event-title">早餐：Hamamoto Coffee</div>
+            <div class="event-desc">品嚐姬路特有且香氣濃郁的經典名物「杏仁吐司」與手工虹吸咖啡。</div>
+            <a href="https://www.google.com/maps?q=Hamamoto%20Coffee%20%E6%BF%B1%E6%9C%AC%E5%92%96%E5%95%A1%E5%BA%97" target="_blank" class="map-btn">📍 咖啡店位置</a>
+        </div>
+        <div class="timeline-item">
+            <span class="time">07:45</span>
+            <div class="event-title">搭乘神姬巴士 8 號線</div>
+            <div class="transport-tag">🚌 「姬路城大手門前」站牌上車 (車程約 25 分鐘)</div>
+            <div class="event-desc">前往書寫山索道下站，剛好可以流暢衔接 08:30 的首班登山纜車。</div>
+            <a href="https://www.google.com/maps?q=%E5%A7%AC%E8%B7%AF%E5%9F%8E" target="_blank" class="map-btn">📍 巴士站(姬路城前)</a>
+        </div>
+        <div class="timeline-item">
+            <span class="time">08:30</span>
+            <div class="event-title">書寫山圓教寺</div>
+            <div class="transport-tag">🚡 索道纜車往返 + 山內接駁散策</div>
+            <div class="event-desc">西國三十三所之古剎，重點考察摩尼殿木造懸造結構，以及大講堂與食堂。</div>
+            <a href="https://www.google.com/maps?q=%E6%9B%B8%E5%AF%AB%E5%B1%B1%E5%9C%93%E6%95%99%E5%AF%BA" target="_blank" class="map-btn">📍 圓教寺位置</a>
+        </div>
+        <div class="timeline-item">
+            <span class="time">11:30</span>
+            <div class="event-title">午餐：炭焼あなご やま義</div>
+            <div class="event-desc">返回站前品嚐極具代表性的炭火現烤星鰻飯 (預算約 ¥2,500)。</div>
+            <a href="https://www.google.com/maps?q=%E7%82%AD%E7%84%BC%E3%81%82%E3%81%AA%E3%81%94%20%E3%82%84%E3%81%BE%E7%BE%A9" target="_blank" class="map-btn">📍 餐廳位置</a>
+        </div>
+        <div class="timeline-item">
+            <span class="time">13:25</span>
+            <div class="event-title">姬路站 ➔ 城崎溫泉</div>
+            <div class="transport-tag">🎫 JR 特急濱風 3 號 (需提前預約指定席，單獨購票約 ¥3,500)</div>
+            <div class="event-desc">穿山越嶺開往日本海側。15:44 抵達城崎溫泉。</div>
+        </div>
+        <div class="timeline-item">
+            <span class="time">19:00</span>
+            <div class="event-title">晚宴與外湯：城崎小林屋 ＆ 御所之湯</div>
+            <div class="event-desc">入住有形文化財日式旅館，享用精製晚宴後，步行前往御所之湯洗滌身心。</div>
+            <a href="https://www.google.com/maps?q=%E5%9F%8E%E5%B4%8E%E6%BA%AB%E6%B3%89%20%E5%B0%8F%E6%9E%97%E5%B1%8B" target="_blank" class="map-btn">📍 小林屋位置</a>
+            <a href="https://www.google.com/maps?q=%E5%BE%A1%E6%89%80%E4%B9%8B%E6%B9%AF" target="_blank" class="map-btn">📍 御所之湯位置</a>
+        </div>
+    </div>
+
+    <!-- Day 4 -->
+    <div class="day-card">
+        <div class="day-header">
+            <span class="day-number">Day 4</span>
+            <span class="day-date">10/6 (二) 出石城下町白瓷工藝尋訪</span>
+        </div>
+        <div class="timeline-item">
+            <span class="time">09:30</span>
+            <div class="event-title">城崎溫泉 ➔ 出石城下町</div>
+            <div class="transport-tag">🚌 全全但巴士 (現場購票單程 ¥740 / 車程約 50 分鐘)</div>
+            <div class="event-desc">搭乘地區巴士前往極具韻味的「但馬小京都」古老城下町廓。</div>
+        </div>
+        <div class="timeline-item">
+            <span class="time">10:30</span>
+            <div class="event-title">出石單車慢遊與出石燒白瓷採集</div>
+            <div class="transport-tag">🚲 租借觀光單車</div>
+            <div class="event-desc">慢騎穿梭於古老街區、遠眺歷史鐘樓「辰鼓樓」，尋訪純白如雪的出石燒白瓷工藝。</div>
+            <a href="https://www.google.com/maps?q=%E5%87%BA%E7%9F%B3%20%E8%BE%B0%E9%BC%93%E6%A8%93" target="_blank" class="map-btn">📍 辰鼓樓位置</a>
+        </div>
+        <div class="timeline-item">
+            <span class="time">12:00</span>
+            <div class="event-title">午餐：出石皿蕎麥麵 萬屋</div>
+            <div class="event-desc">享用手工黑蕎麥麵，極富工藝美感與儀式感。</div>
+            <a href="https://www.google.com/maps?q=%E5%87%BA%E7%9F%B3%E7%9A%BF%E8%95%8E%E9%BA%A5%E9%BA%B5%20%E8%90%AC%E5%B1%8B" target="_blank" class="map-btn">📍 萬屋位置</a>
+        </div>
+        <div class="timeline-item">
+            <span class="time">17:00</span>
+            <div class="event-title">返回城崎溫泉小林屋</div>
+            <div class="event-desc">傍晚搭巴士返回，連住第二晚。可悠閒漫步於垂柳成蔭的溫泉街。</div>
+        </div>
+    </div>
+
+    <!-- Day 5 -->
+    <div class="day-card">
+        <div class="day-header">
+            <span class="day-number">Day 5</span>
+            <span class="day-date">10/7 (三) 安藤清水模 ➔ 森林和食 ➔ 篠山古民家</span>
+        </div>
+        <div class="timeline-item">
+            <span class="time">09:33</span>
+            <div class="event-title">城崎溫泉 ➔ 豐岡站 (關鍵行李寄存)</div>
+            <div class="transport-tag">🚂 JR 山陰本線普通車 (車資約 ¥200)</div>
+            <div class="event-desc"><b>【重要轉運點】</b>抵達豐岡站後，務先將大行李寄存至豐岡站內置物櫃。</div>
+            <a href="https://www.google.com/maps?q=%E8%B1%90%E5%B2%A1%E7%AB%99" target="_blank" class="map-btn">📍 豐岡站位置</a>
+        </div>
+        <div class="timeline-item">
+            <span class="time">10:04</span>
+            <div class="event-title">豐岡站 ➔ 久美濱站 ➔ 和久傳之森</div>
+            <div class="transport-tag">🚃 丹後鐵道 15 分鐘 + 🚕 站前計程車 10 分鐘</div>
+            <div class="event-desc">抵達由安藤忠雄操刀的「繪本館」，欣賞經典清水模與自然光影在森林間形成的幾何階調。</div>
+            <a href="https://www.google.com/maps?q=%E5%92%8C%E4%B9%85%E5%82%B3%E4%B9%8B%E6%A3%AE" target="_blank" class="map-btn">📍 和久傳之森位置</a>
+        </div>
+        <div class="timeline-item">
+            <span class="time">12:00</span>
+            <div class="event-title">午餐：園內「桑」餐廳</div>
+            <div class="event-desc">【需預約】中午 12:00 準時進餐。在森林合圍中慢享極致精緻的手作季節和食 (約 ¥5,000)。<br><i>*🚨【時間底線】為確保順利提領行李並搭上車，<b>最晚必須於 13:45 搭上計程車</b>返回久美濱站。</i></div>
+            <a href="https://www.google.com/maps?q=%E5%92%8C%E4%B9%85%E5%82%B3%E4%B9%8B%E6%A3%AE%20%E6%A1%91%20%E9%A4%90%E5%BB%B3" target="_blank" class="map-btn">📍 餐廳位置</a>
+        </div>
+        <div class="timeline-item">
+            <span class="time">15:00</span>
+            <div class="event-title">豐岡站 ➔ 篠山口站</div>
+            <div class="transport-tag">🎫 JR 特急東方白鸛 14 號 (こうのとり / 需預約指定席，單獨購票約 ¥3,740)</div>
+            <div class="event-desc">返回豐岡站提領大行李後上車。攜帶大型行李強烈建議提前預約指定席。16:34 抵達篠山口站。</div>
+        </div>
+        <div class="timeline-item">
+            <span class="time">17:00</span>
+            <div class="event-title">入住：NIPPONIA 篠山城下町酒店</div>
+            <div class="event-desc">分散型古民家改建經典，完美保留江戶與明治時期住宅的木造老樑柱結構肌理。</div>
+            <a href="https://www.google.com/maps?q=NIPPONIA%20%E7%AF%A0%E5%B1%B1%E5%9F%8E%E4%B8%8B%E7%94%BA%E9%85%92%E5%BA%97" target="_blank" class="map-btn">📍 飯店總台位置</a>
+        </div>
+    </div>
+
+    <!-- Day 6 -->
+    <div class="day-card">
+        <div class="day-header">
+            <span class="day-number">Day 6</span>
+            <span class="day-date">10/8 (四) 丹波古窯工藝與杉本博司寂美學</span>
+        </div>
+        <div class="timeline-item">
+            <span class="time">10:00</span>
+            <div class="event-title">篠山城跡與大書院</div>
+            <div class="event-desc">深度考察宏偉的木結構復原大書院，體驗桃山時代日本空間體系的震撼。</div>
+            <a href="https://www.google.com/maps?q=%E7%AF%A0%E5%B1%B1%E5%9F%8E%E8%B7%A1%20%E5%A4%A7%E6%9B%B8%E9%99%A2" target="_blank" class="map-btn">📍 大書院位置</a>
+        </div>
+        <div class="timeline-item">
+            <span class="time">13:30</span>
+            <div class="event-title">河原町妻入商家群 ＆ 丹波燒工藝尋訪</div>
+            <div class="transport-tag">🚲 租借單車慢遊街廓</div>
+            <div class="event-desc">穿梭於獨得大山牆構造的歷史保護街區，尋訪日本六大古窯之一的丹波燒生活器物。</div>
+            <a href="https://www.google.com/maps?q=%E6%B2%B3%E5%8E%9F%E7%94%BA%E5%A6%BB%E5%85%A5%E5%95%86%E5%AE%B6%E7%BE%A4" target="_blank" class="map-btn">📍 歷史街區位置</a>
+        </div>
+        <div class="timeline-item">
+            <span class="time">15:30</span>
+            <div class="event-title">茶點：小田垣豆堂 (Odagaki Mamedo)</div>
+            <div class="event-desc">由新素材研究所操刀，將老黑豆商舖改造成揉合當代侘寂與水石庭園的頂級咖啡館.</div>
+            <a href="https://www.google.com/maps?q=%E5%B0%8F%E7%94%B0%E5%9E%A3%E8%B1%86%E5%A0%82" target="_blank" class="map-btn">📍 豆堂位置</a>
+        </div>
+        <div class="timeline-item">
+            <span class="time">18:30</span>
+            <div class="event-title">返回 NIPPONIA 篠山城下町</div>
+            <div class="event-desc">連住第二晚，品味近郊安寧且富含歷史底蘊的古鎮長夜。</div>
+        </div>
+    </div>
+
+    <!-- Day 7 -->
+    <div class="day-card">
+        <div class="day-header">
+            <span class="day-number">Day 7</span>
+            <span class="day-date">10/9 (五) 大阪放行李 ➔ 安藤忠雄清水模 ➔ 難波購物</span>
+        </div>
+        <div class="timeline-item">
+            <span class="time">10:31</span>
+            <div class="event-title">篠山口站 ➔ 大阪站</div>
+            <div class="transport-tag">💳 JR 丹波路快速 (直接刷西瓜卡 ¥1,170 / 11:36 抵達)</div>
+            <div class="event-desc">抵達大阪站後，依據「無行李美學散策」原則，直接先啟導航前往今晚下榻飯店寄存行李。</div>
+        </div>
+        <div class="timeline-item">
+            <span class="time">12:00</span>
+            <div class="event-title">【首要動線】直奔飯店寄存大行李</div>
+            <div class="transport-tag">🚇 大阪站搭乘地下鐵四橋線至「西長堀站」</div>
+            <div class="event-desc">抵達 Hotel it. osaka shinmachi 辦理行李寄存，卸下重擔後輕鬆出發活動。</div>
+            <a href="https://www.google.com/maps?q=Hotel%20it.%20osaka%20shinmachi" target="_blank" class="map-btn">📍 先導航至飯店（放行李）</a>
+        </div>
+        <div class="timeline-item">
+            <span class="time">14:00</span>
+            <div class="event-title">大阪府立狹山池博物館</div>
+            <div class="transport-tag">🚇 難波站搭南海高野線至大阪狹山市站，步行約 10 分鐘</div>
+            <div class="event-desc">安藤忠雄極致代表作。漫步於巨大的圓形廣場與迴廊，親身感受雙側巨型人工瀑布水牆的光影魔術。</div>
+            <a href="https://www.google.com/maps?q=%E5%A4%A7%E9%98%AA%E5%BA%9C%E7%AB%8B%E7%8B%B9%E5%B1%B1%E6%B1%A0%E5%8D%9A%E7%89%A9%E9%A4%A8" target="_blank" class="map-btn">📍 博物館位置</a>
+        </div>
+        <div class="timeline-item">
+            <span class="time">18:30</span>
+            <div class="event-title">專業裝備採買：難波 CITY</div>
+            <div class="event-desc">重點鎖定 Workman Girl / Workman Plus 及 Patagonia 旗艦專櫃，採買專業戶外機能服飾裝備。</div>
+            <a href="https://www.google.com/maps?q=%E9%9B%A3%E6%B3%A2%20CITY" target="_blank" class="map-btn">📍 商場位置</a>
+        </div>
+    </div>
+
+    <!-- Day 8 -->
+    <div class="day-card">
+        <div class="day-header">
+            <span class="day-number">Day 8</span>
+            <span class="day-date">10/10 (六) 堀江美學家飾採集 ➔ 歸途</span>
+        </div>
+        <div class="timeline-item">
+            <span class="time">09:30</span>
+            <div class="event-title">大阪西區堀江 散策 (Orange Street)</div>
+            <div class="event-desc">最後的品味採集時間。漫步於極受設計師推崇的街區，選購充滿天然質感的日系或北歐家居生活小物。</div>
+            <a href="https://www.google.com/maps?q=%E5%A0%80%E6%B1%9F%E6%A9%98%E5%AD%90%E8%A1%97" target="_blank" class="map-btn">📍 橘子街入口位置</a>
+        </div>
+        <div class="timeline-item">
+            <span class="time">13:00</span>
+            <div class="event-title">難波站 ➔ 關西國際機場 (KIX)</div>
+            <div class="transport-tag">🚇 南海特急 Rapi:t (車程約 37 分鐘)</div>
+            <div class="event-desc">⏱️【提早出發】回飯店提領行李前往難波站乘車。改為 13:00 準時搭車，預留充裕時間至機場通關與退稅。</div>
+        </div>
+        <div class="timeline-item">
+            <span class="time">15:20</span>
+            <div class="event-title">關西機場 ✈️ 台北桃園 (TPE)</div>
+            <div class="event-desc">搭乘捷星航空班機返回台北，圓滿結束深度美學採集之旅。</div>
+        </div>
+    </div>
+
+    <!-- 遇雨備案 -->
+    <div class="section-title">☔ 遇雨備案（Rainy Day Alternatives）</div>
+    <div class="day-card" style="border-left: 4px solid var(--accent-color);">
+        <ul class="bullets">
+            <li><b>Day 3 姬路段雨備</b>：若書寫山因豪雨導致地面濕滑、索道纜車停駛，建議改為直接購買門票進入<b>姬路城大天守閣內部</b>，深入考察日本戰國木造工事；隨後步行至隔壁<b>好古園</b>的茶室中，依著迴遊式庭園靜享日式抹茶與聽雨。</li>
+            <li><b>Day 4 出石段雨備</b>：若大雨不便騎乘單車，建議取消古鎮室外慢遊，改前往<b>出石燒傳統產業會館</b>，參與室內極致純白瓷的手作拉坯或傳統彩繪體驗。</li>
+            <li><b>Day 6 篠山段雨備</b>：若無法騎單車，可改搭乘神姬巴士固定班次前往河原町。並強烈建議提早前往由杉本博司打造的<b>小田垣豆堂</b>，在落地的日式格扇門窗室內，一邊品茗一邊靜觀雨水打在水石枯山水庭園上的極致寂靜美學。</li>
+        </ul>
+    </div>
+
+</div>
+
+</body>
+</html>
